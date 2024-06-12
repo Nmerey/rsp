@@ -1,2 +1,53 @@
-<h1>Games#index</h1>
-<p>Find me in app/views/games/index.html.erb</p>
+<div class="container text-center mt-5">
+  <h1 class="display-4">Rock - Paper - Scissors</h1>
+  <p class="lead">
+    Rock Paper Scissors is a zero sum game that is usually played by two people using their hands and no tools. The idea is to make shapes with an outstretched hand where each shape will have a certain degree of power and will lead to an outcome.
+  </p>
+  <div class="row mt-4">
+    <div class="col-4">
+      <button class="btn btn-light play-button w-50 h-50" data-throw="rock">
+        <img src="/assets/rock.svg" alt="Rock" class="img-fluid h-100">
+        <p>Rock</p>
+      </button>
+    </div>
+    <div class="col-4">
+      <button class="btn btn-light play-button w-50 h-50" data-throw="paper">
+        <img src="/assets/paper.svg" alt="Paper" class="img-fluid h-100">
+        <p>Paper</p>
+      </button>
+    </div>
+    <div class="col-4">
+      <button class="btn btn-light play-button w-50 h-50" data-throw="scissors">
+        <img src="/assets/scissors.svg" alt="Scissors" class="img-fluid h-100">
+        <p>Scissors</p>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="resultModal" tabindex="-1" aria-labelledby="resultModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="resultText"></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body text-center d-flex justify-content-around align-items-center">
+        <div class="w-25 h-25">
+          <p>You chose:</p>
+          <img id="userThrow" src="" alt="Your choice" class="img-fluid h-50 w-75">
+        </div>
+        <div class="w-25 h-25">
+          <p>Server chose:</p>
+          <img id="serverThrow" src="" alt="Server choice" class="img-fluid h-50 w-75">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Ok</button>
+      </div>
+    </div>
+  </div>
+</div>

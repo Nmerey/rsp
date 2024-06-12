@@ -1,5 +1,9 @@
 class FetchCurbThrowService
-  FETCH_URL = 'https://private-anon-82ea37bac5-curbrockpaperscissors.apiary-mock.com/rps-stage/throw'
+  require 'net/http'
+  require 'json'
+
+  FETCH_URL = 'https://5eddt4q9dk.execute-api.us-east-1.amazonaws.com/rps-stage/throw'
+
   def self.call
     uri = URI(FETCH_URL)
     response = Net::HTTP.get(uri)

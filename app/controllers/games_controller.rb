@@ -1,6 +1,5 @@
 class GamesController < ApplicationController
-  require 'json'
-
+  skip_before_action :verify_authenticity_token
   def index
   end
 
@@ -8,15 +7,10 @@ class GamesController < ApplicationController
     user_throw = params[:throw]
     server_throw = FetchCurbThrowService.call
 
-    if server_throw.nil?
-      @result = ['rock', 'paper','scissors'].sample
-    else
-      @result = RpsResultService.new(user_throw, server_throw).call
-    end
+    server_throw = WinningCombinations::THROW_SIGNS.sample if server_throw.nil?
 
-    @user_throw = user_throw
-    @server_throw = server_throw
+    @result = RpsResultService.new(user_throw, server_throw).call
 
-    render :index
+    render json: { result: @result, server_throw: server_throw }
   end
 end
