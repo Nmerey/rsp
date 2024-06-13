@@ -1,5 +1,5 @@
 module WinningCombinations
-  THROW_SIGNS = ['rock', 'paper', 'scissors', 'hammer']
+  THROW_SIGNS = ['rock', 'paper', 'scissors'] # <= add new sign here
 
   def self.for(throw)
     # Rule for winning combinations can be added new throw signs

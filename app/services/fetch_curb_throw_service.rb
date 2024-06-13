@@ -16,13 +16,3 @@ class FetchCurbThrowService
     e.message
   end
 end
-
-
-def get_server_throw
-  uri = URI('https://codechallenge.boohma.com/random-throw')
-  response = Net::HTTP.get(uri)
-  data = JSON.parse(response)
-  data['type'] # returns 'rock', 'paper', or 'scissors'
-rescue StandardError
-  nil
-end
