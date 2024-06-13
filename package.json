@@ -1,0 +1,10 @@
+{
+  "name": "rps",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "nmerey <nurlan.merey@dreidelpay.com>",
+  "license": "MIT",
+  "dependencies": {
+    "jquery": "^3.7.1"
+  }
+}
